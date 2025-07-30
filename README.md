@@ -6,7 +6,7 @@ This repository contains code for a multi-disease prediction system, likely focu
 
 ## Files:
 
-* **Multi-Disease-Data.ipynb**: This Jupyter Notebook appears to contain the training and evaluation logic for the machine learning models. It shows an example of training a Kidney Disease model using Logistic Regression, including GridSearchCV for hyperparameter tuning and evaluation metrics such as Accuracy, Precision, Recall, F1-Score, and AUC-ROC. It also outlines numerical and categorical features used for the Kidney Disease model.
+* **'Multi-Disease-Data.ipynb'**: This Jupyter Notebook appears to contain the training and evaluation logic for the machine learning models. It shows an example of training a Kidney Disease model using Logistic Regression, including GridSearchCV for hyperparameter tuning and evaluation metrics such as Accuracy, Precision, Recall, F1-Score, and AUC-ROC. It also outlines numerical and categorical features used for the Kidney Disease model.
 * **`Multi-Disease-Stream.py`**: This Python script seems to be a Streamlit application that provides a user interface for predicting diseases. It loads pre-trained models and their associated configurations (e.g., target encoders, feature columns) for different diseases from a `models` directory. The script defines a `DISEASE_CONFIGS` dictionary to manage paths and labels for various disease models, with "Kidney Disease" being an example.
 
 ## Setup and Installation:
