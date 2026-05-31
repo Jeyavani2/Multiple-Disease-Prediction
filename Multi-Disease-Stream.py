@@ -84,7 +84,31 @@ DISEASE_CONFIGS = {
         },
         "categorical_options": {}
     },
-
+    "Liver Disease": {
+        "model_path": os.path.join(MODELS_DIR, 'liver_pipeline.joblib'),
+        "le_target_path": None, # Liver target usually 0/1 directly (after remapping 1->1, 2->0)
+        "le_gender_path": os.path.join(MODELS_DIR, 'le_liver_gender.joblib'), # Specific for Liver Gender
+        "X_train_cols_path": os.path.join(MODELS_DIR, 'liver_X_train_cols.joblib'),
+        "positive_class_label": "Yes Liver Disease",
+        "negative_class_label": "No Liver Disease",
+        "input_features": { 
+            'numerical': [
+                {'name': 'Age', 'min': 0.0, 'max': 90.0, 'default': 40.0, 'format': "%.0f"},
+                {'name': 'Total_Bilirubin', 'min': 0.0, 'max': 70.0, 'default': 1.0, 'format': "%.1f"},
+                {'name': 'Direct_Bilirubin', 'min': 0.0, 'max': 30.0, 'default': 0.5, 'format': "%.1f"},
+                {'name': 'Alkaline_Phosphotase', 'min': 50.0, 'max': 2000.0, 'default': 180.0, 'format': "%.1f"},
+                {'name': 'Alamine_Aminotransferase', 'min': 5.0, 'max': 500.0, 'default': 40.0, 'format': "%.1f"},
+                {'name': 'Aspartate_Aminotransferase', 'min': 5.0, 'max': 500.0, 'default': 40.0, 'format': "%.1f"},
+                {'name': 'Total_Protiens', 'min': 4.0, 'max': 10.0, 'default': 7.0, 'format': "%.1f"},
+                {'name': 'Albumin', 'min': 1.0, 'max': 6.0, 'default': 3.5, 'format': "%.1f"},
+                {'name': 'Albumin_and_Globulin_Ratio', 'min': 0.0, 'max': 2.0, 'default': 1.0, 'format': "%.2f"}
+            ],
+            'categorical': ['Gender'] # 'Gender' will be a string 'Male'/'Female' for input
+        },
+        "categorical_options": {
+            'Gender': ['Male', 'Female']
+        }
+    }
 }
 
 # --- Utility Functions ---
